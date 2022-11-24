@@ -1,6 +1,6 @@
 {
-  "name": "moleculer-apollo-server",
-  "version": "0.3.7",
+  "name": "@latech/moleculer-apollo-server",
+  "version": "0.3.7-2",
   "description": "Apollo GraphQL server for Moleculer API Gateway",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/moleculerjs/moleculer-apollo-server.git"
+    "url": "https://github.com/AhmedM-Dev/moleculer-apollo-server"
   },
   "author": "MoleculerJS",
   "license": "MIT",
