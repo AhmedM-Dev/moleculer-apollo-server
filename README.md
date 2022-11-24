@@ -14,7 +14,7 @@
 
 ## Install
 ```
-npm i moleculer-apollo-server moleculer-web graphql
+npm i @latech/moleculer-apollo-server moleculer-web graphql
 ```
 
 ## Usage

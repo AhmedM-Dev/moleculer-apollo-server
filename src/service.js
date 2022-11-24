@@ -26,6 +26,16 @@ module.exports = function (mixinOptions) {
 		subscriptionEventName: "graphql.publish",
 		autoUpdateSchema: true,
 		checkActionVisibility: false,
+		/**
+		 * @description Options passed to resolvers
+		 */
+		resolverOptions: {
+			/**
+			 * @description Default meta data to pass within the resolver function
+			 * This meta data will be passed inside **ctx** object in **ctx.meta**
+			 */
+			defaultMeta: null,
+		},
 	});
 
 	const serviceSchema = {
@@ -157,6 +167,7 @@ module.exports = function (mixinOptions) {
 					params: staticParams = {},
 					rootParams = {},
 					fileUploadArg = null,
+					meta = mixinOptions.resolverOptions.defaultMeta || {},
 				} = def;
 				const rootKeys = Object.keys(rootParams);
 
@@ -259,7 +270,7 @@ module.exports = function (mixinOptions) {
 								);
 							}
 
-							return await context.ctx.call(actionName, mergedParams);
+							return await context.ctx.call(actionName, mergedParams, { meta });
 						}
 					} catch (err) {
 						if (nullIfError) {

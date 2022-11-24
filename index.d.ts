@@ -43,6 +43,7 @@ declare module "moleculer-apollo-server" {
 		nullIfError?: boolean;
 		skipNullKeys?: boolean;
 		params?: { [key: string]: any };
+		meta?: any;
 	}
 
 	export interface ServiceResolverSchema {
@@ -97,6 +98,9 @@ declare module "moleculer-apollo-server" {
 		serverOptions?: Config;
 		checkActionVisibility?: boolean;
 		autoUpdateSchema?: boolean;
+		resolverOptions?: {
+			defaultMeta?: any 
+		}
 	}
 
 	export function ApolloService(options: ApolloServiceOptions): ServiceSchema;
