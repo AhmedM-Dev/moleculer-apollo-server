@@ -6,4 +6,9 @@ docs/
 examples/
 typings
 test/
+.codeclimate.yml
+.editorconfig
+.eslintignore
+.eslintrc.js
+.prettierrc.js
 CHANGELOG.md
