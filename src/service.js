@@ -270,7 +270,13 @@ module.exports = function (mixinOptions) {
 								);
 							}
 
-							return await context.ctx.call(actionName, mergedParams, { meta });
+							// If there is data passed in rootParams we know this is a request from graphql resolver,
+							// so we inject the default meta data coming from resolverOptions.defaultMeta
+							return await context.ctx.call(
+								actionName,
+								mergedParams,
+								Object.keys(rootParams || {}).length ? { meta } : undefined
+							);
 						}
 					} catch (err) {
 						if (nullIfError) {
